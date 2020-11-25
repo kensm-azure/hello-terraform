@@ -16,11 +16,13 @@ pipeline {
         stage('Terraform Init'){
             steps{
                  sh 'terraform --version'
-                 sh 'pwd'
                  sh label: '', script: 'terraform init'
-                
-                    
-                }
+                 }
             }
+        stage('ApplicationValidate'){
+            steps{
+                sh 'terraform validate'
+                 }
+           }
         }
     }
