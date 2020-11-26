@@ -19,9 +19,24 @@ pipeline {
                  sh label: '', script: 'terraform init'
                  }
             }
-        stage('ApplicationValidate'){
+        stage('Terraform Validate'){
             steps{
                 sh 'terraform validate'
+                 }
+           }
+        stage('Terraform Plan'){
+            steps{
+                sh 'terraform plan'
+                 }
+           }
+        stage('Terraform Apply'){
+            steps{
+                sh 'terraform Apply'
+                 }
+           }
+        stage('Terraform Show'){
+            steps{
+                sh 'terraform Show'
                  }
            }
         }
