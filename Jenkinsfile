@@ -14,12 +14,6 @@ pipeline {
     
     stages{
 
-        stage('az login'){
-            steps{
-                 sh 'az login'
-                 }
-            }
-
         stage('Terraform Init'){
             steps{
                  sh 'terraform --version'
